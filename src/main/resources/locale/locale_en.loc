@@ -1,0 +1,3 @@
+# Login Page
+LOGIN_ERROR_MESSAGE=Invalid username and password.
+LOGOUT_SUCCESS_MESSAGE=You have been logged out.

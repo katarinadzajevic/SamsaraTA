@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="utf-snapshots" />
+      <option name="name" value="maven-campaign-utf-snapshot" />
+      <option name="url" value="https://artifactory-uw2.adobeitc.com/artifactory/maven-campaign-utf-snapshot" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="experienceplatform-snapshot-local" />
+      <option name="name" value="Experience Platform Snapshot Local" />
+      <option name="url" value="https://artifactory.corp.adobe.com/artifactory/maven-experienceplatform-snapshot-local/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="asr-releases" />
+      <option name="name" value="ASR Releases" />
+      <option name="url" value="https://artifactory.corp.adobe.com/artifactory/maven-asr-release" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jitpack.io" />
+      <option name="name" value="jitpack.io" />
+      <option name="url" value="https://jitpack.io" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="snapshots" />
+      <option name="name" value="maven-campaign-snapshot" />
+      <option name="url" value="https://artifactory.corp.adobe.com/artifactory/maven-campaign-snapshot-local" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="experienceplatform-release-local" />
+      <option name="name" value="Experience Platform Release Local" />
+      <option name="url" value="https://artifactory.corp.adobe.com/artifactory/maven-experienceplatform-release-local/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="experienceplatform-snapshot" />
+      <option name="name" value="Experience Platform Snapshot" />
+      <option name="url" value="https://artifactory.corp.adobe.com/artifactory/maven-experienceplatform-snapshot/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="asr-snapshots" />
+      <option name="name" value="ASR Snapshots" />
+      <option name="url" value="https://artifactory.corp.adobe.com/artifactory/maven-asr-snapshot" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="experienceplatform-release" />
+      <option name="name" value="Experience Platform Release" />
+      <option name="url" value="https://artifactory.corp.adobe.com/artifactory/maven-experienceplatform-release/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="maven-campaign-release" />
+      <option name="url" value="https://artifactory.corp.adobe.com/artifactory/maven-campaign-release" />
+    </remote-repository>
+  </component>
+</project>
