@@ -8,6 +8,7 @@ import utils.PropertiesUtils;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 public class User {
 
@@ -165,6 +166,7 @@ public class User {
 
     public void setHeroes(List<Hero> heroes) {
         this.heroes = heroes;
+        this.heroCount = heroes.size();
     }
 
     public void addHero(Hero hero){
@@ -207,6 +209,19 @@ public class User {
     public static String createRandomLastName(){
         Faker faker = new Faker();
         return faker.name().lastName();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+        User user = (User) o;
+        return username.equals(user.username);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username);
     }
 
     @Override

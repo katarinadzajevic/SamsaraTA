@@ -10,6 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.SessionId;
 import org.testng.Assert;
 
 import java.net.MalformedURLException;
@@ -100,9 +101,13 @@ public class WebDriverUtils extends LoggerUtils {
         return driver;
     }
 
+    public static SessionId getSessionId(WebDriver driver){
+        return ((RemoteWebDriver) driver).getSessionId();
+    }
+
     public static boolean hasDriverQuit(WebDriver driver){
         if(driver != null){
-           return ((RemoteWebDriver) driver).getSessionId() == null;
+           return getSessionId(driver) == null;
         } else {
             return true;
         }

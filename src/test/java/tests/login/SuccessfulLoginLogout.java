@@ -3,7 +3,6 @@ package tests.login;
 import data.CommonStrings;
 import data.Groups;
 import data.Time;
-import objects.User;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -16,7 +15,6 @@ import tests.BaseTestClass;
 import utils.DateTimeUtils;
 import utils.PropertiesUtils;
 
-import javax.jws.soap.SOAPBinding;
 
 @Test(groups = {Groups.REGRESSION, Groups.SANITY, Groups.LOGIN})
 public class SuccessfulLoginLogout extends BaseTestClass {
@@ -35,14 +33,17 @@ public class SuccessfulLoginLogout extends BaseTestClass {
         adminPassword = PropertiesUtils.getAdminPassword();
     }
 
-    @Test
-    public void demoTest(){
-        User user1 = User.createNewUniqueUser("kaca");
-        User user2 = User.createNewUniqueUser("drasko");
-
-        log.info(user1);
-        log.info(user2);
-    }
+//    @Test
+//    public void demoTest(){
+//        User user1 = User.createNewUniqueUser("kaca");
+//        User user2 = User.createNewUniqueUser("drasko");
+//
+//        log.info(user1);
+//        log.info(user2);
+//
+//        log.info("UserExists: " + RestApiUtils.checkIfUserExists(user1.getUsername()));
+//        log.info("UserExists: " + RestApiUtils.checkIfUserExists("dedoje"));
+//    }
 
     @Test
     public void testSuccessfulLoginLogout() {
@@ -61,14 +62,16 @@ public class SuccessfulLoginLogout extends BaseTestClass {
         loginPage.typePassword(adminPassword);
         DateTimeUtils.wait(Time.DEMONSTRATION_WAIT);
         WelcomePage welcomePage = loginPage.clickLoginButton();
+        welcomePage.getPageTitle();
 
         DateTimeUtils.wait(Time.DEMONSTRATION_WAIT);
         loginPage = welcomePage.clickLogoutLink();
         DateTimeUtils.wait(Time.DEMONSTRATION_WAIT);
 
+        Assert.assertFalse(loginPage.isErrorMessageDisplayed(), "Error message should NOT be displayed!");
         String successMessage = loginPage.getSuccessMessage();
         Assert.assertEquals(successMessage, expectedLogoutSuccessMessage, "Wrong logout success message!");
-        DateTimeUtils.wait(Time.TIME_SHORT);
+        DateTimeUtils.wait(Time.DEMONSTRATION_WAIT);
     }
 
     @AfterMethod(alwaysRun = true)

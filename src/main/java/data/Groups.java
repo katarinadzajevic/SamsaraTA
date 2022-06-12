@@ -5,6 +5,7 @@ public final class Groups {
     public static final String REGRESSION = "regression";
     public static final String SANITY = "sanity";
     public static final String API = "api";
+    public static final String EVALUATION = "evaluation";
 
     public static final String LOGIN = "login";
 

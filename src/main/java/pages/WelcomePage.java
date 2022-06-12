@@ -13,17 +13,17 @@ public class WelcomePage extends CommonLoggedInPage{
         log.trace("new WelcomePage()");
     }
 
+    public WelcomePage open(){
+        return open(true);
+    }
+
     public WelcomePage open(boolean verify){
-        openUrl(WELCOME_PAGE_URL);
         log.debug("Open WelcomePage(" + WELCOME_PAGE_URL + ")");
+        openUrl(WELCOME_PAGE_URL);
         if (verify){
             verifyWelcomePage();
         }
         return this;
-    }
-
-    public WelcomePage open(){
-        return open(true);
     }
 
     public WelcomePage verifyWelcomePage(){

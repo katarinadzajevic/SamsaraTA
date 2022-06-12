@@ -14,17 +14,17 @@ public class ApiPage extends CommonLoggedInPage{
         log.trace("new ApiPage()");
     }
 
+    public ApiPage open() {
+        return open(true);
+    }
+
     public ApiPage open(boolean verify) {
-        openUrl(API_PAGE_URL);
         log.debug("Open ApiPage(" + API_PAGE_URL + ")");
+        openUrl(API_PAGE_URL);
         if (verify) {
             verifyApiPage();
         }
         return this;
-    }
-
-    public ApiPage open() {
-        return open(true);
     }
 
     public ApiPage verifyApiPage() {

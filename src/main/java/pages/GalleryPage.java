@@ -14,17 +14,17 @@ public class GalleryPage extends CommonLoggedInPage{
         log.trace("new GalleryPage()");
     }
 
+    public GalleryPage open() {
+        return open(true);
+    }
+
     public GalleryPage open(boolean verify) {
-        openUrl(GALLERY_PAGE_URL);
         log.debug("Open GalleryPage(" + GALLERY_PAGE_URL + ")");
+        openUrl(GALLERY_PAGE_URL);
         if (verify) {
             verifyGalleryPage();
         }
         return this;
-    }
-
-    public GalleryPage open() {
-        return open(true);
     }
 
     public GalleryPage verifyGalleryPage() {

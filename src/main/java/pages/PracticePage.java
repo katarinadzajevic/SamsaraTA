@@ -14,17 +14,17 @@ public class PracticePage extends CommonLoggedInPage{
         log.trace("new PracticePage()");
     }
 
+    public PracticePage open() {
+        return open(true);
+    }
+
     public PracticePage open(boolean verify) {
-        openUrl(PRACTICE_PAGE_URL);
         log.debug("Open PracticePage(" + PRACTICE_PAGE_URL + ")");
+        openUrl(PRACTICE_PAGE_URL);
         if (verify) {
             verifyPracticePage();
         }
         return this;
-    }
-
-    public PracticePage open() {
-        return open(true);
     }
 
     public PracticePage verifyPracticePage() {

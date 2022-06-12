@@ -14,17 +14,17 @@ public class HeroesPage extends CommonLoggedInPage {
         log.trace("new HeroesPage()");
     }
 
+    public HeroesPage open() {
+        return open(true);
+    }
+
     public HeroesPage open(boolean verify) {
-        openUrl(HEROES_PAGE_URL);
         log.debug("Open HeroesPage(" + HEROES_PAGE_URL + ")");
+        openUrl(HEROES_PAGE_URL);
         if (verify) {
             verifyHeroesPage();
         }
         return this;
-    }
-
-    public HeroesPage open() {
-        return open(true);
     }
 
     public HeroesPage verifyHeroesPage() {

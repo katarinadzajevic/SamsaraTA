@@ -8,13 +8,11 @@ import org.testng.Assert;
 
 public class UsersPage extends CommonLoggedInPage{
 
-
     private final String USERS_PAGE_URL = getPageUrl(PageUrlPaths.USERS_PAGE);
 
     //Locators
     private final By addNewUserButtonLocator =
             By.xpath("//a[contains(@class,'btn-info')] and contains[@onclick,'openAddUserModal']");
-
 
     //Constructor
     public UsersPage(WebDriver driver) {
@@ -22,17 +20,17 @@ public class UsersPage extends CommonLoggedInPage{
         log.trace("new UsersPage()");
     }
 
+    public UsersPage open() {
+        return open(true);
+    }
+
     public UsersPage open(boolean verify) {
-        openUrl(USERS_PAGE_URL);
         log.debug("Open UsersPage(" + USERS_PAGE_URL + ")");
+        openUrl(USERS_PAGE_URL);
         if (verify) {
             verifyUsersPage();
         }
         return this;
-    }
-
-    public UsersPage open() {
-        return open(true);
     }
 
     public UsersPage verifyUsersPage() {

@@ -14,17 +14,17 @@ public class ProfilePage extends CommonLoggedInPage{
         log.trace("new ProfilePage()");
     }
 
+    public ProfilePage open() {
+        return open(true);
+    }
+
     public ProfilePage open(boolean verify) {
-        openUrl(PROFILE_PAGE_URL);
         log.debug("Open ProfilePage(" + PROFILE_PAGE_URL + ")");
+        openUrl(PROFILE_PAGE_URL);
         if (verify) {
             verifyProfilePage();
         }
         return this;
-    }
-
-    public ProfilePage open() {
-        return open(true);
     }
 
     public ProfilePage verifyProfilePage() {

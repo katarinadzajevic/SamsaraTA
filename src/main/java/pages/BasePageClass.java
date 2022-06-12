@@ -30,6 +30,11 @@ public abstract class BasePageClass extends LoggerUtils {
         return PropertiesUtils.getBaseUrl() + path;
     }
 
+    protected String getCurrentURL(){
+        log.trace("getCurrentURL()");
+        return driver.getCurrentUrl();
+    }
+
     protected String getCurrentUrl() {
         log.trace("getCurrentUrl()");
         return driver.getCurrentUrl();

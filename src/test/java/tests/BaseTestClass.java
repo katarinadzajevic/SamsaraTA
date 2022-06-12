@@ -19,24 +19,42 @@ public abstract class BaseTestClass extends LoggerUtils {
         WebDriverUtils.quitDriver(driver);
     }
 
-    private void ifFailed(WebDriver driver, ITestResult testResult){
+    private void ifFailed(WebDriver driver, ITestResult testResult, int session){
         if (testResult.getStatus() == ITestResult.FAILURE){
             if(PropertiesUtils.getTakeScreenshot()){
                 String testName = testResult.getTestClass().getName();
-                ScreenshotUtils.takeScreenshot(driver, testName);
+                String screenshotName = testName;
+                if (session > 0){
+                    screenshotName = screenshotName + "." + session;
+                }
+                ScreenshotUtils.takeScreenshot(driver, screenshotName);
             }
         }
     }
 
-    protected void tearDown(WebDriver driver, ITestResult testResult){
+    protected void tearDown(WebDriver driver, ITestResult testResult, int session){
         String testName = testResult.getTestClass().getName();
-        log.debug("tearDown(" + testName + ")");
+        session = Math.abs(session);
+        String sessionName = testName;
+        if(session > 0){
+            sessionName = sessionName + "." + session;
+        }
+        log.debug("tearDown(" + sessionName + ")");
         try {
-            ifFailed(driver, testResult);
+            ifFailed(driver, testResult, session);
         } catch (AssertionError | Exception e){
-            log.error("Exception occurred in tearDown(" + testName + ")! Message: " + e.getMessage());
+            log.error("Exception occurred in tearDown(" + sessionName + ")! Message: " + e.getMessage());
         } finally {
             quitDriver(driver);
         }
+    }
+
+    protected void tearDown(WebDriver driver, ITestResult testResult){
+        tearDown(driver, testResult, 0);
+    }
+
+    protected void tearDown(WebDriver driver){
+        log.debug("tearDown()");
+            quitDriver(driver);
     }
 }

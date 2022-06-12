@@ -14,17 +14,17 @@ public class AdminPage extends CommonLoggedInPage{
         log.trace("new AdminPage()");
     }
 
+    public AdminPage open() {
+        return open(true);
+    }
+
     public AdminPage open(boolean verify) {
-        openUrl(ADMIN_PAGE_URL);
         log.debug("Open AdminPage(" + ADMIN_PAGE_URL + ")");
+        openUrl(ADMIN_PAGE_URL);
         if (verify) {
             verifyAdminPage();
         }
         return this;
-    }
-
-    public AdminPage open() {
-        return open(true);
     }
 
     public AdminPage verifyAdminPage() {
